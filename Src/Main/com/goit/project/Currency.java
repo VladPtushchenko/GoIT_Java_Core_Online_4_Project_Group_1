@@ -5,7 +5,7 @@ class Currency{
     BigDecimal rateBuy;
     BigDecimal rateSell;
     String bankName; // NBU, PB, Mono
-    String baseCName = "UAH";
+    String baseCName = "UAH"; //Валюта по отношению к которой берется курс. У нас пока только гривна.
 
     public Currency() {
     }
