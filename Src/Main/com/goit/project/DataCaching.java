@@ -1,3 +1,5 @@
+package com.goit.project;
+
 import java.util.HashMap;
 //Ещё не дописан
 
@@ -8,6 +10,17 @@ public class DataCaching implements Runnable {
         HashMap<String, Currency> currenciesPB = new HashMap<String, Currency>();
         HashMap<String, Currency> currenciesMono = new HashMap<String, Currency>();
     }
+
+    private void parseCurrencyResponse(HashMap<String, BigDecimal> curMap){
+
+        for (Map.Entry<String, BigDecimal> entry : curMap.entrySet()) {
+                String key = entry.getKey();
+                BigDecimal value = entry.getValue();
+
+        }
+
+    }
+
     public Currency getEURNBU{
         return CurrencyStorage.currenciesNBU.get("EUR");
     }
@@ -52,7 +65,9 @@ public class DataCaching implements Runnable {
             do {
                 try {
                     //взаимодействие с BankResponce, надо видеть код BankResponce
-
+                    (new BankResponse(PB)).getCurrency();
+                    (new BankResponse(NBU)).getCurrency();
+                    (new BankResponse(Monobank)).getCurrency();
                     Thread.sleep(5 * 60 * 1000);
                 } catch (Exception e) {
                     e.printStackTrace();

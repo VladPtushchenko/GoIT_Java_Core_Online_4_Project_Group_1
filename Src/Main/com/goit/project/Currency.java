@@ -1,3 +1,5 @@
+package com.goit.project;
+
 import java.math.BigDecimal;
 
 class Currency{
