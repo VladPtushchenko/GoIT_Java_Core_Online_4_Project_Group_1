@@ -1,13 +1,9 @@
 package com.goit.utils;
 
-import banks.Bank;
-import banks.Monobank;
-import banks.NBU;
-import banks.PB;
+import com.goit.banks.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import task.ChoiceBank;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

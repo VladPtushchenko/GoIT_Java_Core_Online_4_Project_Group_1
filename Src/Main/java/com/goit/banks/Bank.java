@@ -1,4 +1,4 @@
-package banks;
+package com.goit.banks;
 
 import java.math.BigDecimal;
 

@@ -1,14 +1,17 @@
 package com.goit.project;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.Map;
+import com.goit.task.*;
 //Ещё не дописан
 
 public class DataCaching implements Runnable {
 
     private static class CurrencyStorage{
-        HashMap<String, Currency> currenciesNBU = new HashMap<String, Currency>();
-        HashMap<String, Currency> currenciesPB = new HashMap<String, Currency>();
-        HashMap<String, Currency> currenciesMono = new HashMap<String, Currency>();
+        protected static HashMap<String, Currency> currenciesNBU = new HashMap<String, Currency>();
+        protected static HashMap<String, Currency> currenciesPB = new HashMap<String, Currency>();
+        protected static HashMap<String, Currency> currenciesMono = new HashMap<String, Currency>();
     }
 
     private void parseCurrencyResponse(HashMap<String, BigDecimal> curMap){
@@ -21,31 +24,31 @@ public class DataCaching implements Runnable {
 
     }
 
-    public Currency getEURNBU{
-        return CurrencyStorage.currenciesNBU.get("EUR");
+    public Currency getEURNBU(){
+        return (CurrencyStorage.currenciesNBU).get("EUR");
     }
-    public Currency getUSDNBU{
+    public Currency getUSDNBU(){
         return CurrencyStorage.currenciesNBU.get("USD");
     }
-    public Currency getRUBNBU{
+    public Currency getRUBNBU(){
         return CurrencyStorage.currenciesNBU.get("RUB");
     }
-    public Currency getEURPB{
+    public Currency getEURPB(){
         return CurrencyStorage.currenciesPB.get("EUR");
     }
-    public Currency getUSDPB{
+    public Currency getUSDPB(){
         return CurrencyStorage.currenciesPB.get("USD");
     }
-    public Currency getRUBPB{
+    public Currency getRUBPB(){
         return CurrencyStorage.currenciesNBU.get("RUB");
     }
-    public Currency getEURMono{
+    public Currency getEURMono(){
         return CurrencyStorage.currenciesNBU.get("EUR");
     }
-    public Currency getUSDMono{
+    public Currency getUSDMono(){
         return CurrencyStorage.currenciesNBU.get("USD");
     }
-    public Currency getRUBMono{
+    public Currency getRUBMono(){
         return CurrencyStorage.currenciesNBU.get("RUB");
     }
 
@@ -65,9 +68,9 @@ public class DataCaching implements Runnable {
             do {
                 try {
                     //взаимодействие с BankResponce, надо видеть код BankResponce
-                    (new BankResponse(PB)).getCurrency();
-                    (new BankResponse(NBU)).getCurrency();
-                    (new BankResponse(Monobank)).getCurrency();
+                    (new BankResponse(ChoiceBank.PB)).getCurrency();
+                    (new BankResponse(ChoiceBank.NBU)).getCurrency();
+                    (new BankResponse(ChoiceBank.Monobank)).getCurrency();
                     Thread.sleep(5 * 60 * 1000);
                 } catch (Exception e) {
                     e.printStackTrace();

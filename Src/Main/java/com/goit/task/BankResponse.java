@@ -1,6 +1,6 @@
 package com.goit.task;
 
-import utils.Utils;
+import com.goit.utils.Utils;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -21,7 +21,7 @@ public class BankResponse {
     String [] cur = {"USD", "EUR", "RUB"};
     List<String> curr = List.of(new String[]{"USD", "EUR", "RUB"});
 
-    HashMap<String, BigDecimal> getCurrency() throws IOException, InterruptedException {
+    public HashMap<String, BigDecimal> getCurrency() throws IOException, InterruptedException {
 
         HashMap<String, BigDecimal> currency = new HashMap<String, BigDecimal>();
 
